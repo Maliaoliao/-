@@ -1,14 +1,14 @@
-package dmitry;
+package principle.dmitry;
 
 /**
- * 铁塔.
+ * 承租人.
  *
  * @author: 1131375721 @qq.com mall
- * @date: 2020 -03-26 15:07
+ * @date: 2020 -03-26 14:54
  */
-public class TowerUser {
+public class LesseeUser {
 
-    //铁塔名称
+    //承租人姓名
     private String name;
 
     /**

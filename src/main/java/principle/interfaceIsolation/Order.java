@@ -1,4 +1,4 @@
-package interfaceIsolation;
+package principle.interfaceIsolation;
 
 /**
  * 用户订单类.

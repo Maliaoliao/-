@@ -1,15 +1,16 @@
-package dmitry;
+package principle.dmitry;
 
 /**
- * 承租人.
+ * 出租人姓名.
  *
  * @author: 1131375721 @qq.com mall
- * @date: 2020 -03-26 14:54
+ * @date: 2020 -03-26 15:06
  */
-public class LesseeUser {
+public class LeaseUser {
 
-    //承租人姓名
+    //出租人姓名
     private String name;
+
 
     /**
      * Gets name.

@@ -1,6 +1,4 @@
-package dmitry;
-
-import java.rmi.dgc.Lease;
+package principle.dmitry;
 
 /**
  * description.

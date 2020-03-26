@@ -1,4 +1,4 @@
-package dependencyInversion;
+package principle.dependencyInversion;
 
 /**
  * @description: 旅行类

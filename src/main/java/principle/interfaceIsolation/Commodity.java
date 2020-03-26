@@ -1,4 +1,4 @@
-package interfaceIsolation;
+package principle.interfaceIsolation;
 
 import com.sun.org.slf4j.internal.LoggerFactory;
 import org.apache.logging.log4j.Level;

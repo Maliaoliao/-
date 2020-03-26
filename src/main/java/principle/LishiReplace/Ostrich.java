@@ -1,4 +1,4 @@
-package LishiReplace;
+package principle.LishiReplace;
 
 /**
  * @description: 鸵鸟

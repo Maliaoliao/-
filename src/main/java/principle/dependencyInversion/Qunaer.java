@@ -1,4 +1,4 @@
-package dependencyInversion;
+package principle.dependencyInversion;
 
 /**
  * @description: 去哪儿

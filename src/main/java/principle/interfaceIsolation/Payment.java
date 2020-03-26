@@ -1,4 +1,4 @@
-package interfaceIsolation;
+package principle.interfaceIsolation;
 
 /**
  * The interface Payment.

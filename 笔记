@@ -1,8 +1,7 @@
-**从今天开始，每天学习一点点，从基础开始，每天学习一个设计模式，从原理上弄懂，运用到真实的业务常见中**
+###从今天开始，每天学习一点点，从基础开始，每天学习一个设计模式，从原理上弄懂，运用到真实的业务常见中
 
-学习java设计模式来源与《软件设计模式java版》
-
-`设计模式：`
+####学习java设计模式来源与《软件设计模式java版》
+[语法](https://www.runoob.com/markdown/md-tutorial.html)
    
    
    什么是设计模式？
@@ -76,15 +75,80 @@
         
         合成复用，如果要实现代码复用，首先要考虑合成/聚合，达到复用代码的效果，其次才是选择使用继承。
         
-总结：这7大原则是为了我们在开发过程中，提高代码的复用性，降低代码相互之间的耦合性，
-     提高代码的可读性，可维护性，可扩展性。站在巨人的肩膀上我们可以看的更高，走的更远。
+>总结：这7大原则是为了我们在开发过程中，提高代码的复用性，降低代码相互之间的耦合性，
+      提高代码的可读性，可维护性，可扩展性。站在巨人的肩膀上我们可以看的更高，走的更远。
      
 
 
 
 
-软件设计模式，是基于这7个开发原则的，遵循7大开发原则，可以使我们的代码可读性，可维护性，可扩展性。
+软件设计模式，是基于这7个开发原则的，遵循7大开发原则，可以使我们的代码`可读性`，`可维护性`，`可扩展性`。
 那么就让我们开始学习软件设计模式吧。
+
+[百度](http://baidu.com)
+
+[变量命名](https://unbug.github.io/codelf/#%E7%9C%81%E4%BB%BD)
+##单例模式
+       
+       单例模式是在软件开发过程中，为了避免资源重复的创建，保证数据的一致性对对象只创建一次。
+       有点"办事只跑一趟的味道"
+
+* 懒汉模式
+       
+       特点：当创建一个新的类的时候，我们只需要创建一次，在代码中可以判断该对象是否为空的方式来实现单例模式
+       中的懒汉模式。
+       
+       应用场景：配置对象，数据连接池等
+
+    ```
+     public class Switch {
+     
+         private static volatile Switch witch = null;
+         Switch(){
+             System.out.println("内部方法");
+         }
+     
+         public static synchronized Switch getSwitch(){
+             //懒汉模式的体现，如果不为空的话会创建，为空的话就会返回已经创建好的对象
+             if(witch == null){
+                 System.out.println("空开关");
+                 witch = new Switch();
+                 return witch;
+             }
+             System.out.println("已经打开了");
+             return witch;
+         }
+     
+         public void getName(){
+             System.out.println("这是一个开关");
+         };
+     }
+      
+       /**
+       * Test 测试懒汉模式.
+       */
+      @Test
+      public void testMethod() {
+          Switch s = Switch.getSwitch();
+          s.getName();
+          Switch s2 = Switch.getSwitch();
+          s2.getName();
+          //如果使用new出来的对象,对象的code是不一样的。（通过debug的方式可以查看）
+          Switch s3 = new Switch();
+          if (s == s2) {
+              System.out.println("同一个操作对象");
+              return;
+          }
+          System.out.println("不同的操作对象");
+      }
+     ```
+       
+
+* 饿汉模式
+
+        
+
+
         
     
    

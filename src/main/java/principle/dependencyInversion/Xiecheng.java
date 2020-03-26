@@ -1,4 +1,4 @@
-package dependencyInversion;
+package principle.dependencyInversion;
 
 /**
  * @description: 携程旅游

@@ -1,4 +1,4 @@
-package dependencyInversion;
+package principle.dependencyInversion;
 
 /**
  * @description: 用户选择出游方式

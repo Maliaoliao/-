@@ -1,4 +1,4 @@
-package dmitry;
+package principle.dmitry;
 
 /**
  * description.
