@@ -2,7 +2,7 @@ package pattern.single;
 
 import org.junit.Test;
 
-import java.util.concurrent.atomic.AtomicReference;
+
 
 /**
  * description.
@@ -50,5 +50,23 @@ public class TestRun {
             }
             System.out.println("不同的操作对象");
         });
+    }
+
+    /**
+     * 饿汉模式 Test.
+     */
+    @Test
+    public void test() {
+        User u = User.getUser();
+        u.getName();
+
+        User u2 = User.getUser();
+        u2.getName();
+
+
+        if(u == u2){
+            System.out.println("同一个对象");
+        }
+
     }
 }

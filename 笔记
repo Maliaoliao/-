@@ -146,10 +146,118 @@
 
 * 饿汉模式
 
+        特点，在程序创建的时候，该对象就已经创建。
+    ```
+    public class User {
+    
+        /**
+         * 对象在运行程序的时候就被创建出来了
+         */
+        private static User instance;
+    
+        static {
+            instance = new User();
+        }
+        private User(){
+            System.out.println("第N次进入");
+        }
+    
+        /**
+         * Get user user.
+         *
+         * @return the user
+         */
+        public static final User getUser(){
+            System.out.println("进来");
+            return instance;
+        }
+    
+        /**
+         * Gets name.
+         */
+        public void getName() {
+            System.out.println("获取用户名称");
+        }
+    }
+      //测试饿汉模式
+      @Test
+      public void test() {
+          User u = User.getUser();
+          u.getName();
+  
+          User u2 = User.getUser();
+          u2.getName();
+  
+  
+          if(u == u2){
+              System.out.println("同一个对象");
+          }
+  
+      }
+  ```
         
-
-
+##原型模式
         
+        使用clone()实现对对象的克隆，这样产生的对象相对与单例模式产生的对象，它们的内存地址是不一样的。
+        核心就是克隆对象,
+        在对象属性相同或者相似的时候，可以克隆对象实现原型模式
+    
+```
+    public class User implements Cloneable {
+    
+        /**
+         * 对象在运行程序的时候就被创建出来了
+         */
+        private static User instance;
+    
+        static {
+            instance = new User();
+        }
+        private User(){
+            System.out.println("第N次进入");
+        }
+    
+        /**
+         * Get user user.
+         *
+         * @return the user
+         */
+        public static final User getUser(){
+            System.out.println("进来");
+            return instance;
+        }
+    
+        /**
+         * Gets name.
+         */
+        public void getName() {
+            System.out.println("获取用户名称");
+        }
+    
+    }
+    
+    @Test
+        public void test() throws CloneNotSupportedException {
+            User u = new User();
+    
+            User res = (User) u.clone();
+    
+            if(u == res){
+                System.out.println("对象相等");
+            }
+    
+    
+            if(u == res){
+                System.out.println("对象相等");
+            }
+            System.out.println(u.getName());
+    
+            System.out.println(res.getName());
+    
+        }
+```
+##工厂模式
+        特点：创建与使用分离，使用者只需要关于工厂会产生的内容，而无需关注工厂的具体实现。     
     
    
    
