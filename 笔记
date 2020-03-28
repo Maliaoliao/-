@@ -266,7 +266,39 @@
             2.抽象build实现类，用来实现具体的建造方式，包含具体的实现。
             3.指挥者类，用来协调构建buile创造类中的方法。
         代码：build
+##代理模式
+        解决了高级类不能被修改的问题，使用代理模式，可以实现代理高级类，从而在使用高级类的时候
+        可以做一些其它业务操作。
+        静态代理 proxy.staticproxy
+        动态代理 proxy.dynamicproxy 需要实现InvocationHandler接口
+    ```
+    public class MyProxy implements InvocationHandler {
     
+        //真实对象
+        private Object objecrs = null;
+    
+        /**
+         * Bind object.
+         *
+         * @param objecrs the objecrs
+         * @return the object
+         */
+    
+        public Object bind(Object objecrs){
+            this.objecrs = objecrs;
+            return Proxy.newProxyInstance(objecrs.getClass().getClassLoader(), objecrs.getClass().getInterfaces(), this);
+        }
+    
+        @Override
+        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+            System.out.println("1");
+            //这个objecrs一定要是真实对象中的对象，否则会进入死循环
+            Object object = method.invoke(objecrs,args);
+            System.out.println("2");
+            return object;
+        }
+    }
+    ```
    
    
 
