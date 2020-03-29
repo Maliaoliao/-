@@ -1,4 +1,4 @@
-package pattern.proxy.dynamicproxy;
+package pattern.proxy.dynamicproxy.jdkProxy;
 
 /**
  * description.

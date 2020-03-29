@@ -269,36 +269,73 @@
 ##代理模式
         解决了高级类不能被修改的问题，使用代理模式，可以实现代理高级类，从而在使用高级类的时候
         可以做一些其它业务操作。
-        静态代理 proxy.staticproxy
+        jdk 代理： 只能代理接口，
+        静态代理 proxy.staticproxy 只代理关键类
         动态代理 proxy.dynamicproxy 需要实现InvocationHandler接口
-    ```
-    public class MyProxy implements InvocationHandler {
-    
-        //真实对象
-        private Object objecrs = null;
-    
-        /**
-         * Bind object.
-         *
-         * @param objecrs the objecrs
-         * @return the object
-         */
-    
-        public Object bind(Object objecrs){
-            this.objecrs = objecrs;
-            return Proxy.newProxyInstance(objecrs.getClass().getClassLoader(), objecrs.getClass().getInterfaces(), this);
-        }
-    
-        @Override
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("1");
-            //这个objecrs一定要是真实对象中的对象，否则会进入死循环
-            Object object = method.invoke(objecrs,args);
-            System.out.println("2");
-            return object;
-        }
+        CGlib 代理： 类也可以代理，性能高，使用asm机制
+```
+//jdk代理
+public class MyProxy implements InvocationHandler {
+
+    //真实对象
+    private Object objecrs = null;
+
+    /**
+     * Bind object.
+     *
+     * @param objecrs the objecrs
+     * @return the object
+     */
+
+    public Object bind(Object objecrs){
+        this.objecrs = objecrs;
+        return Proxy.newProxyInstance(objecrs.getClass().getClassLoader(), objecrs.getClass().getInterfaces(), this);
     }
-    ```
-   
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("1");
+        //这个objecrs一定要是真实对象中的对象，否则会进入死循环
+        Object object = method.invoke(objecrs,args);
+        System.out.println("2");
+        return object;
+    }
+}
+
+
+
+
+    //CGlib动态代理 
+    public class LogInterceptor implements MethodInterceptor {
+        @Override
+        public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+            System.out.println("之前" + method.getName());
+            //return null;
+            Object res = methodProxy.invokeSuper(o, objects);
+            System.out.println("之后" + method.getName());
+            return res;
+        }
+
+
+
+
+    @Test
+    public void test(){
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(UserDao.class);
+        enhancer.setCallback(new LogInterceptor());
+        UserDao user = (UserDao)enhancer.create();
+
+        user.getUserAll("123123");
+        System.out.println(user.id = "123");
+    }
+```
+
+##适配器模式
+        我理解的适配器就是充当了一个翻译的功能，可以将中文翻译成英文，也可以将法语翻译成英文。
+        双向适配器则是一个适配器可以用作是A，B两个人之间的互相翻译，互相适配
+        代码：
+        多适配：adaptee.manyadaptee
+        双向适配： adaptee.twowayadaptee
    
 

@@ -13,8 +13,8 @@ public class FactoryTest {
     @Test
     public void test() {
         //妙
-        Calculation c = new CalculationImpl();
-        System.out.println(c.summation(1.1, 1.0));
+        /*Calculation c = new CalculationImpl();
+        System.out.println(c.summation(1.1, 1.0));*/
 
         CalculationFactory calculationFactory = new CalculationFactoryImpl();
 

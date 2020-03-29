@@ -1,4 +1,4 @@
-package pattern.proxy.dynamicproxy;
+package pattern.proxy.dynamicproxy.jdkProxy;
 
 import org.junit.Test;
 
@@ -12,8 +12,8 @@ public class proxyTest {
 
     @Test
     public void test() {
-        SpringProxy proxy = new SpringProxy();
-        Huawei res = (Huawei) proxy.bind(new HuaweiImpl());
+        SpringB proxy = new SpringB();
+        Huawei res = (Huawei) proxy.getObject(new HuaweiImpl());
 
 
         System.out.println(res.getPhone("1"));
