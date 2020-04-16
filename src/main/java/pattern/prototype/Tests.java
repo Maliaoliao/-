@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * description.
+ * 原型模式.
  *
  * @author: 1131375721@qq.com mall
  * @date: 2020-03-27 15:03

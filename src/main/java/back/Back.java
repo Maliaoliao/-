@@ -1,8 +1,6 @@
 package back;
 
 
-import http.HttpClientUtils;
-
 /**
  * @description: 银行
  * @author: 1131375721@qq.com mall
@@ -23,8 +21,8 @@ public class Back {
         //获取到 bank 代码
         String bank = String.valueOf(json.get("bank"));*/
         //爬取支付宝银行合作商页面
-        String listContent = HttpClientUtils.doGet("http://www.macrozheng.com/admin/index.html#/home").getContent();
+        //String listContent = HttpClientUtils.doGet("http://www.macrozheng.com/admin/index.html#/home").getContent();
         //过滤得到需要的银行名称
-        System.out.println(listContent);
+        //System.out.println(listContent);
     }
 }

@@ -337,5 +337,9 @@ public class MyProxy implements InvocationHandler {
         代码：
         多适配：adaptee.manyadaptee
         双向适配： adaptee.twowayadaptee
+##桥接模式
+     代码：pattern.bridging.jacket  购买不同颜色和不同品牌的服饰
+     当属性有多个维度时，而且两个维度会不断纵向扩展时，我们可以使用桥接模式来实现，
+     这种方式时将接口和继承相互组合，进行实现。
    
 

@@ -1,6 +1,6 @@
 package http;
 
-import com.sun.org.slf4j.internal.LoggerFactory;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -18,6 +18,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -86,13 +87,14 @@ public class HttpClientUtils {
 
             StringBuilder sb = new StringBuilder();
             ArrayList<NameValuePair> pairList = new ArrayList<NameValuePair>();
-            for (Entry<String, String> entry : hashMap.entrySet()) {
-                BasicNameValuePair pair = new BasicNameValuePair(entry.getKey(), entry.getValue());
+            hashMap.forEach((k,v) -> {
+                BasicNameValuePair pair = new BasicNameValuePair(k, v);
                 pairList.add(pair);
                 //输出 请求结果 用于LogUtil 调试
-                sb.append(entry.getKey()).append("=").append(entry.getValue())
+                sb.append(k).append("=").append(v)
                         .append("&");
-            }
+            });
+
             logger.info("【HttpClientUtils】【x-www-form-urlencoded】 请求地址: {}?{}", url, sb.toString());
             UrlEncodedFormEntity se = new UrlEncodedFormEntity(pairList, "UTF-8");
             se.setContentType(APPLICAION_X_FORM);
@@ -400,7 +402,8 @@ public class HttpClientUtils {
             if (httpResponse.getEntity() != null) {
                 content = EntityUtils.toString(httpResponse.getEntity(), UTF_8);
             }
-            return new HttpClientResult(httpResponse.getStatusLine().getStatusCode(), content);
+            //return new HttpClientResult(httpResponse.getStatusLine().getStatusCode(), content);
+            return null;
         }
         return new HttpClientResult(HttpStatus.SC_INTERNAL_SERVER_ERROR);
     }

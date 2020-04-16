@@ -11,10 +11,25 @@ import org.junit.Test;
 public class StringTest {
     @Test
     public void test() {
-        String res=null;
+        long builder = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder();
-        sb.append("123");
+        for (int i = 0; i < 10000000; i++) {
+            sb.append(i + "1");
+        }
+
+        long endbuilder = System.currentTimeMillis();
+        System.out.println((endbuilder - builder));
+
+        long buffer = System.currentTimeMillis();
         StringBuffer sf = new StringBuffer();
-        sf.append("123");
+        for (int i = 0; i < 10000000; i++) {
+            sf.append(i + "1");
+        }
+        long endbuffer = System.currentTimeMillis();
+        System.out.println((endbuffer - buffer));
+    }
+    @Test
+    public void test1() {
+        System.out.println(1 << 4);
     }
 }

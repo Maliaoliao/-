@@ -1,7 +1,5 @@
 package throwable.exception;
 
-import redis.redisutil.RedisUtils;
-
 /**
  * 自定义异常.
  *
@@ -24,7 +22,7 @@ public class MallException extends Exception {
         super();
     }
     public MallException(String e){
-        super(RedisUtils.getValue(e) == "" ? RedisUtils.getValue(e) : null);
+
     }
     public MallException(MallException e){
         super();
