@@ -353,6 +353,7 @@ public class MyProxy implements InvocationHandler {
     代码：pattern.appearance
     通过一个整体，访问各个内部。感觉应用场景比较少
 ##享元模式
+    pattern.flyweight????? 没搞懂！！！！
     
     
    
