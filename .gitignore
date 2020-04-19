@@ -1,1 +1,17 @@
 # Created by .ignore support plugin (hsz.mobi)
+!/.idea/
+.idea/
+src/main/resources/
+src/test/
+target/classes/camera/
+target/classes/dependencyInversion/
+target/classes/dmitry/
+target/classes/interfaceIsolation/
+target/generated-sources/
+workspace
+.project
+.classpath
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/
+/.settings/

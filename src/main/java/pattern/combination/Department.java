@@ -15,8 +15,6 @@ public class Department implements Company{
 
     private List<Company> children = new ArrayList<>();
 
-    private List<Department> listDepartment= new ArrayList<>();
-
     public Department(String name){
         this.name = name;
     }

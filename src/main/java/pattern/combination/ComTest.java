@@ -1,6 +1,7 @@
 package pattern.combination;
 
 import org.junit.Test;
+import org.openjdk.jol.info.ClassLayout;
 
 /**
  * 组合模式，使用组合模式算出部门人数的总和
@@ -40,7 +41,6 @@ public class ComTest {
         shouqian.add(c_1);
         shouhuo.add(c_2,c_3);
 
-
         Company y = new Department("研发");
         Company huanan = new Department("华南");
 
@@ -77,6 +77,6 @@ public class ComTest {
         //扩展 统计指定部门下的成员数量
         c.opName();
 
-
+        System.out.println(ClassLayout.parseInstance(mall).toPrintable());
     }
 }
