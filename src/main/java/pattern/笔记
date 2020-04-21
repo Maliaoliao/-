@@ -382,7 +382,10 @@ public class MyProxy implements InvocationHandler {
       抽象接口通知，
       由具体实现这监听
 ##中介者模式
-
+##迭代器模式
+    代码：pattern.iteration.utils
+    数据载体和迭代器相互隔离，用户遍历数据，通过统一的迭代器进行查看，
+    接口之间相互隔离
     
    
 

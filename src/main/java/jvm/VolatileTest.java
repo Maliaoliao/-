@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.concurrent.TimeUnit;
 
 /**
- * description.
+ * volatile关键字，.
  *
  * @author: 1131375721@qq.com mall
  * @date: 2020-04-21 17:41
