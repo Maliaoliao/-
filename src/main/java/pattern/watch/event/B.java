@@ -1,19 +1,17 @@
 package pattern.watch.event;
 
-import org.springframework.context.ApplicationListener;
-
 /**
  * description.
  *
  * @author: 1131375721@qq.com mall
  * @date: 2020-04-19 21:26
  **/
-public class B implements ApplicationListener<wfpEvent> {
+public class B implements WfpListener {
+
+
 
     @Override
-    public void onApplicationEvent(wfpEvent wfpEvent) {
-        if("B".equals(wfpEvent.name)){
-            System.out.println("B");
-        };
+    public void listenerEvent(WfpEvent wfpEvent) {
+        System.out.println("B");
     }
 }

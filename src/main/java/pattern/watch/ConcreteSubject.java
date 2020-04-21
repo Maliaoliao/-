@@ -1,7 +1,7 @@
 package pattern.watch;
 
 /**
- * description.
+ * 通知.
  *
  * @author: 1131375721@qq.com mall
  * @date: 2020-04-19 21:14

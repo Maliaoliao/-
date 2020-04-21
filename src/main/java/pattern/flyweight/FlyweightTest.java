@@ -23,5 +23,6 @@ public class FlyweightTest {
         flyweight3.operation(new UnsharedConcreteFlyweight("第3次调用a"));
         flyweight4.operation(new UnsharedConcreteFlyweight("第1次调用b"));
         flyweight5.operation(new UnsharedConcreteFlyweight("第2次调用b"));
+        StringBuffer sb;
     }
 }

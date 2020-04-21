@@ -17,7 +17,11 @@ public class Tests {
     public static void main(String[] args) {
 
 
-        wfpEvent w = new wfpEvent("A");
-        applicationContext.publishEvent(w);
+        /*wfpEvent w = new wfpEvent("A");
+        applicationContext.publishEvent(w);*/
+
+        
     }
+
+
 }
