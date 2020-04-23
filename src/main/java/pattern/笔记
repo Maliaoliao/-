@@ -386,6 +386,8 @@ public class MyProxy implements InvocationHandler {
     代码：pattern.iteration.utils
     数据载体和迭代器相互隔离，用户遍历数据，通过统一的迭代器进行查看，
     接口之间相互隔离
+##访问者模式
+    
     
    
 
