@@ -387,6 +387,12 @@ public class MyProxy implements InvocationHandler {
     数据载体和迭代器相互隔离，用户遍历数据，通过统一的迭代器进行查看，
     接口之间相互隔离
 ##访问者模式
+    pattern.visitor
+    A访问B给出A结果
+    B访问B给出B结果
+##备忘录模式
+    代码：pattern.memento
+    提供一种可以保存历史状态的方式，并且可以恢复到指定版本的模式。这种模式也称之为快照模式
     
     
    
