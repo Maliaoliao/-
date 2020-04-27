@@ -3,7 +3,7 @@ package map;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.Map;
 
 /**
@@ -15,6 +15,26 @@ import java.util.Map;
 public class hasmap {
     @Test
     public void test() {
+
+        Map map = new HashMap();
+        map.put("",1);
+        map.put("",2);
+        System.out.println(map.get(""));
+        map.put("",3);
+        System.out.println(map.get(""));
+        Map hasTable = new Hashtable();
+        hasTable.put("","");
+        hasTable.put("","");
+        hasTable.put("","");
+        System.out.println(hasTable.get("") + "1111");
+        //System.out.println(ClassLayout.parseInstance(map).toPrintable());
+        /*map.put("a","1");
+        map.put("a","1");
+        map.forEach((k,v)->{
+            System.out.println(k +"==="+ v);
+        });*/
+
+
         /*String key = "a";
         String keys = "a";
         int h;
@@ -25,12 +45,7 @@ public class hasmap {
         System.out.println(re);*/
 
 
-        Map map = new HashMap();
-        map.put("a","1");
-        map.put("a","1");
-        map.forEach((k,v)->{
-            System.out.println(k +"==="+ v);
-        });
+
 
         /*Map maptable = new Hashtable();
         maptable.put("","1");
@@ -41,12 +56,12 @@ public class hasmap {
             System.out.println(k +"==="+ v);
         });
 */
-        HashSet<String> set = new HashSet<String>();
+        /*HashSet<String> set = new HashSet<String>();
         set.add("123");
         set.add("123");
         set.add("123");
         set.forEach(e->{
             System.out.println(e);
-        });
+        });*/
     }
 }

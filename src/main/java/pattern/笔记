@@ -257,16 +257,19 @@
         }
 ```
 ##工厂模式
+        代码：pattern.factory
         特点：创建与使用分离，使用者只需要关于工厂会产生的内容，而无需关注工厂的具体实现。
         代码：  factory
         一个字：妙
 ##建造者模式
+        代码：pattern.build
         建造者模式
             1.抽象buile类，用来提供抽象的建造方法。
             2.抽象build实现类，用来实现具体的建造方式，包含具体的实现。
             3.指挥者类，用来协调构建buile创造类中的方法。
         代码：build
 ##代理模式
+        
         解决了高级类不能被修改的问题，使用代理模式，可以实现代理高级类，从而在使用高级类的时候
         可以做一些其它业务操作。
         jdk 代理： 只能代理接口，
@@ -332,6 +335,7 @@ public class MyProxy implements InvocationHandler {
 ```
 
 ##适配器模式
+        代码：pattern.adaptee
         我理解的适配器就是充当了一个翻译的功能，可以将中文翻译成英文，也可以将法语翻译成英文。
         双向适配器则是一个适配器可以用作是A，B两个人之间的互相翻译，互相适配
         代码：
@@ -382,6 +386,7 @@ public class MyProxy implements InvocationHandler {
       抽象接口通知，
       由具体实现这监听
 ##中介者模式
+
 ##迭代器模式
     代码：pattern.iteration.utils
     数据载体和迭代器相互隔离，用户遍历数据，通过统一的迭代器进行查看，
@@ -394,6 +399,10 @@ public class MyProxy implements InvocationHandler {
     代码：pattern.memento
     提供一种可以保存历史状态的方式，并且可以恢复到指定版本的模式。这种模式也称之为快照模式
     
+##解释器模式
+    略过，效率很低
+    java 中jep就可以搞定
+
     
    
 
